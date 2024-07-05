@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\FirstFor\bin\Debug\net8.0\FirstFor.exe
+C:\Users\Admin\source\repos\FirstFor\bin\Debug\net8.0\FirstFor.deps.json
+C:\Users\Admin\source\repos\FirstFor\bin\Debug\net8.0\FirstFor.runtimeconfig.json
+C:\Users\Admin\source\repos\FirstFor\bin\Debug\net8.0\FirstFor.dll
+C:\Users\Admin\source\repos\FirstFor\bin\Debug\net8.0\FirstFor.pdb
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\FirstFor.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\FirstFor.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\FirstFor.AssemblyInfo.cs
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\FirstFor.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\FirstFor.dll
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\refint\FirstFor.dll
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\FirstFor.pdb
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\FirstFor.genruntimeconfig.cache
+C:\Users\Admin\source\repos\FirstFor\obj\Debug\net8.0\ref\FirstFor.dll

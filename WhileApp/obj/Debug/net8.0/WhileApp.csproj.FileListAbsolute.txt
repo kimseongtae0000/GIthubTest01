@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\WhileApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\WhileApp.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\WhileApp.AssemblyInfo.cs
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\WhileApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\WhileApp\bin\Debug\net8.0\WhileApp.exe
+C:\Users\Admin\source\repos\WhileApp\bin\Debug\net8.0\WhileApp.deps.json
+C:\Users\Admin\source\repos\WhileApp\bin\Debug\net8.0\WhileApp.runtimeconfig.json
+C:\Users\Admin\source\repos\WhileApp\bin\Debug\net8.0\WhileApp.dll
+C:\Users\Admin\source\repos\WhileApp\bin\Debug\net8.0\WhileApp.pdb
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\WhileApp.dll
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\refint\WhileApp.dll
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\WhileApp.pdb
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\WhileApp.genruntimeconfig.cache
+C:\Users\Admin\source\repos\WhileApp\obj\Debug\net8.0\ref\WhileApp.dll
