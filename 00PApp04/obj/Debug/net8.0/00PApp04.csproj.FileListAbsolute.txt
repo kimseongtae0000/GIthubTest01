@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\00PApp04.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\00PApp04.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\00PApp04.AssemblyInfo.cs
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\00PApp04.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\00PApp04\bin\Debug\net8.0\00PApp04.exe
+C:\Users\Admin\source\repos\00PApp04\bin\Debug\net8.0\00PApp04.deps.json
+C:\Users\Admin\source\repos\00PApp04\bin\Debug\net8.0\00PApp04.runtimeconfig.json
+C:\Users\Admin\source\repos\00PApp04\bin\Debug\net8.0\00PApp04.dll
+C:\Users\Admin\source\repos\00PApp04\bin\Debug\net8.0\00PApp04.pdb
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\00PApp04.dll
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\refint\00PApp04.dll
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\00PApp04.pdb
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\00PApp04.genruntimeconfig.cache
+C:\Users\Admin\source\repos\00PApp04\obj\Debug\net8.0\ref\00PApp04.dll

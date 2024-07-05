@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\00PApp05\bin\Debug\net8.0\00PApp05.exe
+C:\Users\Admin\source\repos\00PApp05\bin\Debug\net8.0\00PApp05.deps.json
+C:\Users\Admin\source\repos\00PApp05\bin\Debug\net8.0\00PApp05.runtimeconfig.json
+C:\Users\Admin\source\repos\00PApp05\bin\Debug\net8.0\00PApp05.dll
+C:\Users\Admin\source\repos\00PApp05\bin\Debug\net8.0\00PApp05.pdb
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\00PApp05.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\00PApp05.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\00PApp05.AssemblyInfo.cs
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\00PApp05.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\00PApp05.dll
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\refint\00PApp05.dll
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\00PApp05.pdb
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\00PApp05.genruntimeconfig.cache
+C:\Users\Admin\source\repos\00PApp05\obj\Debug\net8.0\ref\00PApp05.dll
