@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\GuGuDan.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\GuGuDan.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\GuGuDan.AssemblyInfo.cs
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\GuGuDan.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\GuGuDan\bin\Debug\net8.0\GuGuDan.exe
+C:\Users\Admin\source\repos\GuGuDan\bin\Debug\net8.0\GuGuDan.deps.json
+C:\Users\Admin\source\repos\GuGuDan\bin\Debug\net8.0\GuGuDan.runtimeconfig.json
+C:\Users\Admin\source\repos\GuGuDan\bin\Debug\net8.0\GuGuDan.dll
+C:\Users\Admin\source\repos\GuGuDan\bin\Debug\net8.0\GuGuDan.pdb
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\GuGuDan.dll
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\refint\GuGuDan.dll
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\GuGuDan.pdb
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\GuGuDan.genruntimeconfig.cache
+C:\Users\Admin\source\repos\GuGuDan\obj\Debug\net8.0\ref\GuGuDan.dll

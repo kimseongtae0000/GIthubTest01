@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\OperatorApp\bin\Debug\net8.0\OperatorApp.exe
+C:\Users\Admin\source\repos\OperatorApp\bin\Debug\net8.0\OperatorApp.deps.json
+C:\Users\Admin\source\repos\OperatorApp\bin\Debug\net8.0\OperatorApp.runtimeconfig.json
+C:\Users\Admin\source\repos\OperatorApp\bin\Debug\net8.0\OperatorApp.dll
+C:\Users\Admin\source\repos\OperatorApp\bin\Debug\net8.0\OperatorApp.pdb
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\OperatorApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\OperatorApp.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\OperatorApp.AssemblyInfo.cs
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\OperatorApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\OperatorApp.dll
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\refint\OperatorApp.dll
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\OperatorApp.pdb
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\OperatorApp.genruntimeconfig.cache
+C:\Users\Admin\source\repos\OperatorApp\obj\Debug\net8.0\ref\OperatorApp.dll

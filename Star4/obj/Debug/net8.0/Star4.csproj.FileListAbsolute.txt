@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\Star4.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\Star4.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\Star4.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\Star4.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Star4\bin\Debug\net8.0\Star4.exe
+C:\Users\Admin\source\repos\Star4\bin\Debug\net8.0\Star4.deps.json
+C:\Users\Admin\source\repos\Star4\bin\Debug\net8.0\Star4.runtimeconfig.json
+C:\Users\Admin\source\repos\Star4\bin\Debug\net8.0\Star4.dll
+C:\Users\Admin\source\repos\Star4\bin\Debug\net8.0\Star4.pdb
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\Star4.dll
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\refint\Star4.dll
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\Star4.pdb
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\Star4.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Star4\obj\Debug\net8.0\ref\Star4.dll
