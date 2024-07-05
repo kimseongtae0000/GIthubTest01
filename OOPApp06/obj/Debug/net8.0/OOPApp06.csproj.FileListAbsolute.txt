@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\OOPApp06\bin\Debug\net8.0\OOPApp06.exe
+C:\Users\Admin\source\repos\OOPApp06\bin\Debug\net8.0\OOPApp06.deps.json
+C:\Users\Admin\source\repos\OOPApp06\bin\Debug\net8.0\OOPApp06.runtimeconfig.json
+C:\Users\Admin\source\repos\OOPApp06\bin\Debug\net8.0\OOPApp06.dll
+C:\Users\Admin\source\repos\OOPApp06\bin\Debug\net8.0\OOPApp06.pdb
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\OOPApp06.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\OOPApp06.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\OOPApp06.AssemblyInfo.cs
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\OOPApp06.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\OOPApp06.dll
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\refint\OOPApp06.dll
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\OOPApp06.pdb
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\OOPApp06.genruntimeconfig.cache
+C:\Users\Admin\source\repos\OOPApp06\obj\Debug\net8.0\ref\OOPApp06.dll

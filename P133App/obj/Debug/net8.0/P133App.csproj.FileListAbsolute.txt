@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\P133App\bin\Debug\net8.0\P133App.exe
+C:\Users\Admin\source\repos\P133App\bin\Debug\net8.0\P133App.deps.json
+C:\Users\Admin\source\repos\P133App\bin\Debug\net8.0\P133App.runtimeconfig.json
+C:\Users\Admin\source\repos\P133App\bin\Debug\net8.0\P133App.dll
+C:\Users\Admin\source\repos\P133App\bin\Debug\net8.0\P133App.pdb
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\P133App.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\P133App.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\P133App.AssemblyInfo.cs
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\P133App.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\P133App.dll
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\refint\P133App.dll
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\P133App.pdb
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\P133App.genruntimeconfig.cache
+C:\Users\Admin\source\repos\P133App\obj\Debug\net8.0\ref\P133App.dll

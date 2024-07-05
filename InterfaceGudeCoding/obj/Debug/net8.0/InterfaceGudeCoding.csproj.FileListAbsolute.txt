@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\InterfaceGudeCoding.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\InterfaceGudeCoding.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\InterfaceGudeCoding.AssemblyInfo.cs
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\InterfaceGudeCoding.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\InterfaceGudeCoding\bin\Debug\net8.0\InterfaceGudeCoding.exe
+C:\Users\Admin\source\repos\InterfaceGudeCoding\bin\Debug\net8.0\InterfaceGudeCoding.deps.json
+C:\Users\Admin\source\repos\InterfaceGudeCoding\bin\Debug\net8.0\InterfaceGudeCoding.runtimeconfig.json
+C:\Users\Admin\source\repos\InterfaceGudeCoding\bin\Debug\net8.0\InterfaceGudeCoding.dll
+C:\Users\Admin\source\repos\InterfaceGudeCoding\bin\Debug\net8.0\InterfaceGudeCoding.pdb
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\InterfaceGudeCoding.dll
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\refint\InterfaceGudeCoding.dll
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\InterfaceGudeCoding.pdb
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\InterfaceGudeCoding.genruntimeconfig.cache
+C:\Users\Admin\source\repos\InterfaceGudeCoding\obj\Debug\net8.0\ref\InterfaceGudeCoding.dll
