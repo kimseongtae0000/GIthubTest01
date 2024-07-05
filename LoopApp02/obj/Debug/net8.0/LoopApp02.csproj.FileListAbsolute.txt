@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\LoopApp02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\LoopApp02.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\LoopApp02.AssemblyInfo.cs
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\LoopApp02.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\LoopApp02\bin\Debug\net8.0\LoopApp02.exe
+C:\Users\Admin\source\repos\LoopApp02\bin\Debug\net8.0\LoopApp02.deps.json
+C:\Users\Admin\source\repos\LoopApp02\bin\Debug\net8.0\LoopApp02.runtimeconfig.json
+C:\Users\Admin\source\repos\LoopApp02\bin\Debug\net8.0\LoopApp02.dll
+C:\Users\Admin\source\repos\LoopApp02\bin\Debug\net8.0\LoopApp02.pdb
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\LoopApp02.dll
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\refint\LoopApp02.dll
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\LoopApp02.pdb
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\LoopApp02.genruntimeconfig.cache
+C:\Users\Admin\source\repos\LoopApp02\obj\Debug\net8.0\ref\LoopApp02.dll

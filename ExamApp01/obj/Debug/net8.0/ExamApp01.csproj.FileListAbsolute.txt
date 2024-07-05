@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ExamApp01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ExamApp01.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ExamApp01.AssemblyInfo.cs
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ExamApp01.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\ExamApp01\bin\Debug\net8.0\ExamApp01.exe
+C:\Users\Admin\source\repos\ExamApp01\bin\Debug\net8.0\ExamApp01.deps.json
+C:\Users\Admin\source\repos\ExamApp01\bin\Debug\net8.0\ExamApp01.runtimeconfig.json
+C:\Users\Admin\source\repos\ExamApp01\bin\Debug\net8.0\ExamApp01.dll
+C:\Users\Admin\source\repos\ExamApp01\bin\Debug\net8.0\ExamApp01.pdb
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ExamApp01.dll
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\refint\ExamApp01.dll
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ExamApp01.pdb
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ExamApp01.genruntimeconfig.cache
+C:\Users\Admin\source\repos\ExamApp01\obj\Debug\net8.0\ref\ExamApp01.dll

@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\SwitchApp\bin\Debug\net8.0\SwitchApp.exe
+C:\Users\Admin\source\repos\SwitchApp\bin\Debug\net8.0\SwitchApp.deps.json
+C:\Users\Admin\source\repos\SwitchApp\bin\Debug\net8.0\SwitchApp.runtimeconfig.json
+C:\Users\Admin\source\repos\SwitchApp\bin\Debug\net8.0\SwitchApp.dll
+C:\Users\Admin\source\repos\SwitchApp\bin\Debug\net8.0\SwitchApp.pdb
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\SwitchApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\SwitchApp.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\SwitchApp.AssemblyInfo.cs
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\SwitchApp.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\SwitchApp.dll
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\refint\SwitchApp.dll
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\SwitchApp.pdb
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\SwitchApp.genruntimeconfig.cache
+C:\Users\Admin\source\repos\SwitchApp\obj\Debug\net8.0\ref\SwitchApp.dll
