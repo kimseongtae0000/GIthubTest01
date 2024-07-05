@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\Testapp03\bin\Debug\net8.0\Testapp03.exe
+C:\Users\Admin\source\repos\Testapp03\bin\Debug\net8.0\Testapp03.deps.json
+C:\Users\Admin\source\repos\Testapp03\bin\Debug\net8.0\Testapp03.runtimeconfig.json
+C:\Users\Admin\source\repos\Testapp03\bin\Debug\net8.0\Testapp03.dll
+C:\Users\Admin\source\repos\Testapp03\bin\Debug\net8.0\Testapp03.pdb
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\Testapp03.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\Testapp03.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\Testapp03.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\Testapp03.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\Testapp03.dll
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\refint\Testapp03.dll
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\Testapp03.pdb
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\Testapp03.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Testapp03\obj\Debug\net8.0\ref\Testapp03.dll

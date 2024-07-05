@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\Proprtyu02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\Proprtyu02.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\Proprtyu02.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\Proprtyu02.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Proprtyu02\bin\Debug\net8.0\Proprtyu02.exe
+C:\Users\Admin\source\repos\Proprtyu02\bin\Debug\net8.0\Proprtyu02.deps.json
+C:\Users\Admin\source\repos\Proprtyu02\bin\Debug\net8.0\Proprtyu02.runtimeconfig.json
+C:\Users\Admin\source\repos\Proprtyu02\bin\Debug\net8.0\Proprtyu02.dll
+C:\Users\Admin\source\repos\Proprtyu02\bin\Debug\net8.0\Proprtyu02.pdb
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\Proprtyu02.dll
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\refint\Proprtyu02.dll
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\Proprtyu02.pdb
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\Proprtyu02.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Proprtyu02\obj\Debug\net8.0\ref\Proprtyu02.dll
