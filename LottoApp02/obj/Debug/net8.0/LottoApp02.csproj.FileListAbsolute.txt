@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\LottoApp02\bin\Debug\net8.0\LottoApp02.exe
+C:\Users\Admin\source\repos\LottoApp02\bin\Debug\net8.0\LottoApp02.deps.json
+C:\Users\Admin\source\repos\LottoApp02\bin\Debug\net8.0\LottoApp02.runtimeconfig.json
+C:\Users\Admin\source\repos\LottoApp02\bin\Debug\net8.0\LottoApp02.dll
+C:\Users\Admin\source\repos\LottoApp02\bin\Debug\net8.0\LottoApp02.pdb
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\LottoApp02.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\LottoApp02.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\LottoApp02.AssemblyInfo.cs
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\LottoApp02.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\LottoApp02.dll
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\refint\LottoApp02.dll
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\LottoApp02.pdb
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\LottoApp02.genruntimeconfig.cache
+C:\Users\Admin\source\repos\LottoApp02\obj\Debug\net8.0\ref\LottoApp02.dll

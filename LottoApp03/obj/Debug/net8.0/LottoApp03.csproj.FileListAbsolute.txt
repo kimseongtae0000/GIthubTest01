@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\LottoApp03\bin\Debug\net8.0\LottoApp03.exe
+C:\Users\Admin\source\repos\LottoApp03\bin\Debug\net8.0\LottoApp03.deps.json
+C:\Users\Admin\source\repos\LottoApp03\bin\Debug\net8.0\LottoApp03.runtimeconfig.json
+C:\Users\Admin\source\repos\LottoApp03\bin\Debug\net8.0\LottoApp03.dll
+C:\Users\Admin\source\repos\LottoApp03\bin\Debug\net8.0\LottoApp03.pdb
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\LottoApp03.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\LottoApp03.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\LottoApp03.AssemblyInfo.cs
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\LottoApp03.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\LottoApp03.dll
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\refint\LottoApp03.dll
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\LottoApp03.pdb
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\LottoApp03.genruntimeconfig.cache
+C:\Users\Admin\source\repos\LottoApp03\obj\Debug\net8.0\ref\LottoApp03.dll

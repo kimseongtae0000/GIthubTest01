@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\Property01\bin\Debug\net8.0\Property01.exe
+C:\Users\Admin\source\repos\Property01\bin\Debug\net8.0\Property01.deps.json
+C:\Users\Admin\source\repos\Property01\bin\Debug\net8.0\Property01.runtimeconfig.json
+C:\Users\Admin\source\repos\Property01\bin\Debug\net8.0\Property01.dll
+C:\Users\Admin\source\repos\Property01\bin\Debug\net8.0\Property01.pdb
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\Property01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\Property01.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\Property01.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\Property01.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\Property01.dll
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\refint\Property01.dll
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\Property01.pdb
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\Property01.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Property01\obj\Debug\net8.0\ref\Property01.dll
