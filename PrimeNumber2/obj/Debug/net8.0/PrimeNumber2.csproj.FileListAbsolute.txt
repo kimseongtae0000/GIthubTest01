@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\PrimeNumber2\bin\Debug\net8.0\PrimeNumber2.exe
+C:\Users\Admin\source\repos\PrimeNumber2\bin\Debug\net8.0\PrimeNumber2.deps.json
+C:\Users\Admin\source\repos\PrimeNumber2\bin\Debug\net8.0\PrimeNumber2.runtimeconfig.json
+C:\Users\Admin\source\repos\PrimeNumber2\bin\Debug\net8.0\PrimeNumber2.dll
+C:\Users\Admin\source\repos\PrimeNumber2\bin\Debug\net8.0\PrimeNumber2.pdb
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\PrimeNumber2.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\PrimeNumber2.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\PrimeNumber2.AssemblyInfo.cs
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\PrimeNumber2.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\PrimeNumber2.dll
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\refint\PrimeNumber2.dll
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\PrimeNumber2.pdb
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\PrimeNumber2.genruntimeconfig.cache
+C:\Users\Admin\source\repos\PrimeNumber2\obj\Debug\net8.0\ref\PrimeNumber2.dll

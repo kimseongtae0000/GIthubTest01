@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\RandomApp01\bin\Debug\net8.0\RandomApp01.exe
+C:\Users\Admin\source\repos\RandomApp01\bin\Debug\net8.0\RandomApp01.deps.json
+C:\Users\Admin\source\repos\RandomApp01\bin\Debug\net8.0\RandomApp01.runtimeconfig.json
+C:\Users\Admin\source\repos\RandomApp01\bin\Debug\net8.0\RandomApp01.dll
+C:\Users\Admin\source\repos\RandomApp01\bin\Debug\net8.0\RandomApp01.pdb
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\RandomApp01.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\RandomApp01.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\RandomApp01.AssemblyInfo.cs
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\RandomApp01.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\RandomApp01.dll
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\refint\RandomApp01.dll
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\RandomApp01.pdb
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\RandomApp01.genruntimeconfig.cache
+C:\Users\Admin\source\repos\RandomApp01\obj\Debug\net8.0\ref\RandomApp01.dll
