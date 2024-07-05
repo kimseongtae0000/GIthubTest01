@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\Quiz07\bin\Debug\net8.0\Quiz07.exe
+C:\Users\Admin\source\repos\Quiz07\bin\Debug\net8.0\Quiz07.deps.json
+C:\Users\Admin\source\repos\Quiz07\bin\Debug\net8.0\Quiz07.runtimeconfig.json
+C:\Users\Admin\source\repos\Quiz07\bin\Debug\net8.0\Quiz07.dll
+C:\Users\Admin\source\repos\Quiz07\bin\Debug\net8.0\Quiz07.pdb
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\Quiz07.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\Quiz07.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\Quiz07.AssemblyInfo.cs
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\Quiz07.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\Quiz07.dll
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\refint\Quiz07.dll
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\Quiz07.pdb
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\Quiz07.genruntimeconfig.cache
+C:\Users\Admin\source\repos\Quiz07\obj\Debug\net8.0\ref\Quiz07.dll
