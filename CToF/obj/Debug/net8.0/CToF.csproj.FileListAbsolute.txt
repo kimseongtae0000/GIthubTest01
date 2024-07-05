@@ -1,0 +1,14 @@
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\CToF.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\CToF.AssemblyInfoInputs.cache
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\CToF.AssemblyInfo.cs
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\CToF.csproj.CoreCompileInputs.cache
+C:\Users\Admin\source\repos\CToF\bin\Debug\net8.0\CToF.exe
+C:\Users\Admin\source\repos\CToF\bin\Debug\net8.0\CToF.deps.json
+C:\Users\Admin\source\repos\CToF\bin\Debug\net8.0\CToF.runtimeconfig.json
+C:\Users\Admin\source\repos\CToF\bin\Debug\net8.0\CToF.dll
+C:\Users\Admin\source\repos\CToF\bin\Debug\net8.0\CToF.pdb
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\CToF.dll
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\refint\CToF.dll
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\CToF.pdb
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\CToF.genruntimeconfig.cache
+C:\Users\Admin\source\repos\CToF\obj\Debug\net8.0\ref\CToF.dll
