@@ -23,10 +23,13 @@ namespace CurrentTimeApp
         public void GetTime()
         {
             NowTime = DateTime.Now;
+            DateTime t1 = new DateTime(2024, 1, 1);
         }
         public void OutTime()
         {
-            textBox2.AppendText(NowTime + "\r\n");
+            //string time = NowTime.ToString("yyyy-MM-dd HH:mm:ss (zzz)");
+            string time = NowTime.ToString("M/d/yyyy H:m:s (zzz)");
+            textBox2.AppendText(time + "\r\n");
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,7 +39,7 @@ namespace CurrentTimeApp
                 OutNumber();
                 GetTime();
                 OutTime();
-                Thread.Sleep(1000);
+                Thread.Sleep(10);
             }
         }
     }
