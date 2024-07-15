@@ -1,0 +1,19 @@
+//배열과 리스트의 가장 큰 차이는 상수로 고정
+namespace ObjectList
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            char[] arr = new char[3] { 'A', 'B', 'C' };
+            //arr[0] = 'a';
+            List<char> list = new List<char>();
+            list.Add('X'); list.Add('Y'); list.Add('Z');
+
+            foreach (char ch in list)
+            {
+                Console.WriteLine(ch);
+            }
+        }
+    }
+}
