@@ -1,0 +1,24 @@
+namespace 퀴즈2
+{
+       internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Console.Write("년도 : ");
+            int year = int.Parse(Console.ReadLine());
+            Console.Write("월 : ");
+            int month = int.Parse(Console.ReadLine());
+            Console.Write("일 : ");
+            int day = int.Parse(Console.ReadLine());
+
+            string time = new DateTime(year, month, day).ToString("yyyy-MM-dd");
+            Console.WriteLine(time);
+            //DateTime time = new DateTime(2000, 12, 25);
+            //string time1 = time.ToString();
+
+            Console.Write("현재시간 : ");
+            string currentTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+            Console.WriteLine(currentTime);
+        }
+    }
+}
