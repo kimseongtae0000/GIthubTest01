@@ -90,3 +90,16 @@ CREATE TABLE TABLE_TABLE_PK(
     TEL VARCHAR2(20)
 );
 DESC TABLE_TABLE_PK;
+
+
+
+
+
+
+
+
+
+
+
+
+
