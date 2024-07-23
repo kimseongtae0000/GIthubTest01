@@ -7,3 +7,24 @@ CREATE TABLE TABLE_UNIQUE(
 );
 SELECT * FROM TABLE_UNIQUE;
 DESC TABLE_UNIQUE;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
