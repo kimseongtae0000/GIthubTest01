@@ -1,1 +1,9 @@
-
+DECLARE
+BEGIN
+    FOR I IN 0..10 LOOP
+        IF MOD(I, 3) = 0 THEN
+            DBMS_OUTPUT.PUT_LINE('출력 : ' || I);
+        END IF;
+    END LOOP;
+END;
+/
