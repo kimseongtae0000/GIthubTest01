@@ -345,3 +345,32 @@ END pro_err;
 /
 
 SHOW ERRORS;
+
+--ERROR를 USER_%에서 확인하기
+SELECT * FROM USER_ERRORS
+WHERE NAME = 'PRO_ERR';
+
+--19-19 함수
+CREATE OR REPLACE FUNCTION func_aftertax(
+    sal IN NUMBER
+)
+RETURN NUMBER
+IS
+    tax NUMBER := 0.05;
+BEGIN
+    RETURN( ROUND(sal - (sal * tax)));
+END func_aftertax;
+/
+
+--함수 사용
+DECLARE 
+    aftertax NUMBER;
+BEGIN
+    aftertax := func_aftertax(3000);
+    DBMS_OUTPUT.PUT_LINE(aftertax);
+END;
+/
+
+SELECT func_aftertax(3000) FROM DUAL;
+
+SELECT EMPNO, ENAME, SAL, func_aftertax(SAL) FROM EMP;
