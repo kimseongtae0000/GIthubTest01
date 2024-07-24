@@ -285,7 +285,22 @@ EXECUTE pro_noparam;
 SELECT * FROM USER_SOURCE
 WHERE NAME = 'PRO_NOPARAM';
 
-
+--19-7 프로시저에 파라미터 지정하기
+CREATE OR REPLACE PROCEDURE pro_param_in
+(
+    param1 IN NUMBER,
+    param2 NUMBER,
+    param3 NUMBER := 3,
+    param4 NUMBER DEFAULT 4
+)
+IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(param1);
+    DBMS_OUTPUT.PUT_LINE(param2);
+    DBMS_OUTPUT.PUT_LINE(param3);
+    DBMS_OUTPUT.PUT_LINE(param4);
+END;
+/
 
 
 
