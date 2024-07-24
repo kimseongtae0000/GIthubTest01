@@ -374,3 +374,18 @@ END;
 SELECT func_aftertax(3000) FROM DUAL;
 
 SELECT EMPNO, ENAME, SAL, func_aftertax(SAL) FROM EMP;
+
+--19-24
+CREATE OR REPLACE PACKAGE pkg_example
+IS
+    spec_no NUMBER := 10;
+    FUNCTION func_aftertax(sal NUMBER) RETURN NUMBER;
+    PROCEDURE pro_emp(in_empno IN EMP.EMPNO%TYPE);
+    PROCEDURE pro_dept(in_deptno IN DEPT.DEPTNO%TYPE);
+END;
+/
+--사용
+SELECT TEXT FROM USER_SOURCE
+WHERE TYPE = 'PACKAGE';
+
+DESC pkg_example;
