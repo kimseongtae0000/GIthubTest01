@@ -302,7 +302,12 @@ BEGIN
 END;
 /
 
+EXECUTE pro_param_in(1,2,9,8);
+EXECUTE pro_param_in(1,2);
 
+EXECUTE pro_param_in(10,20);
+
+EXECUTE pro_param_in(param1 => 10, param2 => 20);
 
 
 
