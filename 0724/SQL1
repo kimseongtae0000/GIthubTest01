@@ -7,3 +7,11 @@ BEGIN
     END LOOP;
 END;
 /
+
+DECLARE
+BEGIN
+    FOR I IN REVERSE 0..4 LOOP
+        DBMS_OUTPUT.PUT_LINE('현재 I의 값 : ' || I);
+    END LOOP;
+END;
+/
