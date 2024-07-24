@@ -68,9 +68,43 @@ BEGIN
 END;
 /
 
+--17-3
+DECLARE
+    TYPE REC_DEPT IS RECORD(
+        deptno NUMBER(2) NOT NULL := 10,
+        dname DEPT.DNAME%TYPE,
+        loc DEPT.LOC%TYPE
+    );
+    deptrecord DEPTREC;  --객체선언
+BEGIN
+    deptrecord.deptno := 88;
+    deptrecord.dname := '연구';
+    deptrecord.loc := '구미';
+    
+    INSERT INTO DEPT_RECORD
+    VALUES deptrecord;
+END;
+/
 
+DESC DEPT_RECORD;
 
-
+DECLARE
+    TYPE REC_DEPT IS RECORD(
+        deptno NUMBER(2) NOT NULL := 0,
+        dname DEPT.DNAME%TYPE,
+        loc DEPT.LOC%TYPE
+    );
+    deptrecord DEPTREC;  --객체선언
+BEGIN
+    deptrecord.deptno := 50;
+    deptrecord.dname := 'DB';
+    deptrecord.loc := 'ANDONG';
+    
+    UPDATE DEPT_RECORD
+    SET ROW = deptrecord
+    WHERE DEPTNO = 99;
+END;
+/
 
 
 
