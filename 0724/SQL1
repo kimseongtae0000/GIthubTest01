@@ -389,3 +389,27 @@ SELECT TEXT FROM USER_SOURCE
 WHERE TYPE = 'PACKAGE';
 
 DESC pkg_example;
+
+-- Trigger를 사용할 테이블
+CREATE TABLE EMP_TRG AS SELECT * FROM EMP;
+
+SELECT * FROM EMP_TRG;
+
+--19-32 주말 작업 불가 트리거
+CREATE OR REPLACE TRIGGER trg_emp_nodml_weekend
+BEFORE
+INSERT OR UPDATE OR DELETE ON EMP_TRG
+BEGIN
+    IF TO_CHAR(sysdate, 'DY') IN ('토', '일') THEN
+      IF INSERTING THEN
+            raise_application_error(-2000, '주말 사원정보 추가 불가');
+      ELSIF UPDATING THEN
+            raise_application_error(-2001, '주말 사원정보 수정 불가');
+      ELSIF DELETING THEN
+            raise_application_error(-2002, '주말 사원정보 삭제 불가');
+      ELSE
+            raise_application_error(-2003, '주말 사원정보 변경 불가');
+      END IF;
+    END IF;
+END;
+/
