@@ -178,3 +178,24 @@ BEGIN
     DBMS_OUTPUT.PUT_LINE(V_DEPT_ROW.LOC);
 END;
 /
+
+--18-2 단일행 데이터 저장하는 커서 사용
+DECLARE
+    V_DEPT_ROW      DEPT%ROWTYPE;
+    --명시적 커서 선언
+    CURSOR c1 IS
+        SELECT DEPTNO, DNAME, LOC FROM DEPT WERE DEPTNO = 40;
+BEGIN
+    --커서사용?  커서열기 OPEN
+    OPEN c1;
+    --데이터 가공
+    FETCH c1 INTO V_DEPT_ROW;
+    
+    DBMS_OUTPUT.PUT_LINE(V_DEPT_ROW.DEPTNO);
+    DBMS_OUTPUT.PUT_LINE(V_DEPT_ROW.DNAME);
+    DBMS_OUTPUT.PUT_LINE(V_DEPT_ROW.LOC);
+    
+    --커서닫기 리소스 반환
+    CLOSE c1;
+END;
+/
