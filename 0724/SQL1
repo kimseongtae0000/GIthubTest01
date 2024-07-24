@@ -413,3 +413,37 @@ BEGIN
     END IF;
 END;
 /
+--19-35 로그 테이블
+CREATE TABLE EMP_TRG_LOG(
+    TABLENAME VARCHAR2(10),
+    DML_TYPE    VARCHAR2(10),
+    EMPNO       NUMBER(4),
+    USER_NAME VARCHAR2(30),
+    CHANGE_DATE DATE
+);
+
+--19.36
+CREATE OR REOKACE TRIGGER trg_emp_log
+AFTER
+INSERT OR UPDATE OR DELETE ON EMP_TRG
+FOR EACH EOW
+
+BEGIN
+    IF INSERTING THEN
+        INSERT INTO emp_trg_log
+        VALUES ('EMP_TRG', 'INSERT', :new.empno, SYS_CONTRXT('USERENV', 'SESSION_USER'), stsdate);
+    ELSIF UPDATING THEN
+        INSERT INTO emp_trg_log
+        VALUES ('EMP_TRG', 'UPDATING', :old.empno, SYS_CONTRXT('USERENV', 'SESSION_USER'), stsdate);
+    ELSIF DELETING THEN
+        INSERT INTO emp_trg_log
+        VALUES ('EMP_TRG', 'DELETING', :old.empno, SYS_CONTRXT('USERENV', 'SESSION_USER'), stsdate);
+    END IF;
+END;
+/
+
+--19-37 DATA INSERT
+INSERT INTO EMP_TRG
+VALUES(9999, 'TestEmp', 'CLERK', 7788, TO_DATE('2010-03-03','YYYY-MM-DD'),1200, null, 20);
+
+select * from emp_trg order by empno desc;
