@@ -281,7 +281,9 @@ END;
 
 EXECUTE pro_noparam;
 
-
+--19-4 USER_DOURCE 프로시저 확인
+SELECT * FROM USER_SOURCE
+WHERE NAME = 'PRO_NOPARAM';
 
 
 
