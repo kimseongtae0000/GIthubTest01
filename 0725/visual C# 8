@@ -6,11 +6,14 @@ namespace FileTest01
         {
             string path = "c:\\Temp\\abc.txt";
             string content = "안녕하세요 c#";
-
+            //쓰기
             File.WriteAllText(path, content);
 
             Console.WriteLine("파일 작성 성공!!");
+
+            //읽기
+            string words = File.ReadAllText(path);
+            Console.WriteLine(words);
         }
     }
 }
-
