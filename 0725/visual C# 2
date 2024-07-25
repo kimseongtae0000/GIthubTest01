@@ -29,6 +29,12 @@ namespace ListApp01
             {
                 Console.WriteLine(ch);
             }
+
+            ArrayList blist = new ArrayList();
+            blist.Add(1);
+            blist.Add('Z');
+            Console.WriteLine((int)blist[0]);
+            Console.WriteLine((char)blist[1]);
         }
     }
 }
