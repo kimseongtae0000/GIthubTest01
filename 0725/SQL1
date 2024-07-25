@@ -1,1 +1,40 @@
+using System.Runtime.Intrinsics.X86;
+
+namespace _0725
+{
+    class Util
+    {
+        public int[] InputScore(int[] ans)
+        {
+            string[] qus = { "국어 : ", "영어 : ", "수학 : " };
+            int sum = 0;
+            for (int i = 0; i < 3; i++)
+            {
+                Console.Write(qus[i]);
+                ans[i] = int.Parse(Console.ReadLine());
+                sum += ans[i];
+            }
+            ans[3] = sum;
+            double avg = sum / 3.0;
+            return ans;
+        }
+
+        public void OutputScore(int[] ans)
+        {
+            Console.WriteLine($"총점 : {ans[3]}");
+            Console.WriteLine($"평균 : {ans[3] / 3.0:F2}");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            int[] ans = new int[4];
+            Util u = new Util();
+
+            u.InputScore(ans);
+            u.OutputScore(ans);
+        }
+    }
+}
 
