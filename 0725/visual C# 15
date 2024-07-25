@@ -1,3 +1,5 @@
+using System.Linq.Expressions;
+
 namespace LinqExam03
 {
     //p624
@@ -35,30 +37,71 @@ namespace LinqExam03
         {
             List<Person> people = new List<Person>
             {
-                new Person("Tom", 63, "Korea"),
-                new Person("Winnie", 40, "Tibet"),
-                new Person("Anders", 47, "Sudan"),
-                new Person("Hans", 25, "Tibet"),
-                new Person("Eureka", 32, "Sudan"),
-                new Person("Hawk", 15, "Korea")
+                new Person("tom", 63, "korea"),
+                new Person("winnie", 40, "tibet"),
+                new Person("anders", 47, "sudan"),
+                new Person("hans", 25, "tibet"),
+                new Person("eureka", 32, "sudan"),
+                new Person("hawk", 15, "korea")
             };
 
             List<MainLanguage> languages = new List<MainLanguage>
             {
-                new MainLanguage("Anders", "Delphi"),
-                new MainLanguage("Anders", "C#"),
-                new MainLanguage("Tom", "Borland C++"),
-                new MainLanguage("Hans", "Visual C++"),
-                new MainLanguage("Winnie", "R")
+                new MainLanguage("anders", "delphi"),
+                new MainLanguage("anders", "c#"),
+                new MainLanguage("tom", "borland c++"),
+                new MainLanguage("hans", "visual c++"),
+                new MainLanguage("winnie", "r")
             };
 
-            var all = from personn in people
-                      select personn;
+            //var all = from personn in people
+            //          select personn;
 
-            foreach (var item in all)
+            //foreach (var item in all)
+            //{
+            //    Console.WriteLine($"{item.Name}: {item.Age} in {item.Address}");
+            //    //Console.WriteLine(string.Join(Environment.NewLine, all));
+
+            //    var nameList = from person in people
+            //                   select person.Name;
+            //}
+
+            //foreach (var item in nameList)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //var nameList = people.Select((ElementInit) => elem.Name);   //확장메서드 표현 Lamda식
+
+            //foreach (var name in nameList)
+            //{
+            //    Console.WriteLine(name);
+            //}
+
+            //var dataList = from person in people
+            //               select new 
+            //               {
+            //                   Name = person.Name,
+            //                   Year = DateTime.Now.AddYears(-person.Age).Year
+            //               };
+            //foreach (var item in dataList)
+            //{
+            //    Console.WriteLine($"{item.Name} - {item.Year}");
+            //}
+
+            var ageOver30 = from person in people
+                            where person.Age > 30
+                            select person;
+            var addGroup = from person in people
+                           group person by person.Address;
+            foreach(var itemGroup in addGroup)
             {
-                Console.WriteLine($"{item.Name}: {item.Age} in {item.Address}");
-                //Console.WriteLine(string.Join(Environment.NewLine, all));
+                Console.WriteLine($"[{itemGroup.Key}]");
+                foreach (var item in itemGroup)
+                {
+                    Console.WriteLine(item);
+                }
+                Console.WriteLine();
             }
         }
     }
