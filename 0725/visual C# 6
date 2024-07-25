@@ -20,6 +20,10 @@ namespace ExceptionApp01
             {
                 Console.WriteLine("예외가 발생하였습니다.");
             }
+            finally
+            {
+                Console.WriteLine("무조건 실행되는 구문");
+            }
         }
     }
 }
