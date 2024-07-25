@@ -1,1 +1,20 @@
+namespace LamdaExam02
+{
+    internal class Program
+    {
+        delegate int? MyDivide(int a, int b);
+        static void Main(string[] args)
+        {
+            //Thread thread = new Thread(
+            //    (obj) => Console.WriteLine("~~~~~~")
+            //);
+            MyDivide myFunc = (a, b) =>
+            {
+                if (b == 0)
+                    return null;
 
+                return a / b;
+            };
+        }
+    }
+}
