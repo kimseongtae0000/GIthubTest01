@@ -5,18 +5,23 @@ namespace ThreadTest02_6_18
         static void Main(string[] args)
         {
             Thread t = new Thread(threadFunc);
-            t.IsBackground = true;
+            t.IsBackground = true;  //Main 종료시 바로 종료됨
 
             t.Start();
             
-            t.Join();
-            Console.WriteLine("Main 프로그램 종료");
+            t.Join();   //Main 스래드가 t를 기다려줍니다.
+
+            Thread.CurrentThread.Name = "Main 스레드";
+            string mtName = Thread.CurrentThread.Name;
+            Console.WriteLine($"{mtName} 프로그램 종료");
         }
         static void threadFunc()
         {
             Console.WriteLine("3초 후에 프로그램 종료");
             Thread.Sleep(3000);
 
+            Thread.CurrentThread.Name = "Thread1 스레드";
+            string mtName = Thread.CurrentThread.Name;
             Console.WriteLine("threadFunc 프로그램 종료");
         }
     }
