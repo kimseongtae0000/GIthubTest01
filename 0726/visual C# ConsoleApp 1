@@ -1,0 +1,40 @@
+namespace DigitalWatch01
+{
+    public partial class Form1 : Form
+    {
+        private Thread thread1;
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            //DateTime currentTime = DateTime.Now;
+            //label1.Text = currentTime.ToString("hh : mm : ss");
+            
+            //Thread.Sleep(1000);
+            for (int i = 0; i < 10; i++)
+            {
+                thread1 = new Thread(UpdateTime);
+                thread1.IsBackground = true;
+                thread1.Start();
+            }
+        }
+        private void UpdateTime()
+        {
+            while (true)
+            {
+                DateTime currentTime = DateTime.Now;
+                string strTume = label1.Text = currentTime.ToString("hh : mm : ss");
+                this.Invoke((MethodInvoker)delegate
+                {
+                    label1.Text = strTume;
+                });
+                Invoke((Action)(() => label1.Text = strTume));
+                Thread.Sleep(1000);
+            }
+        }
+    }
+}
+
