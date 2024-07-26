@@ -5,8 +5,11 @@ namespace ThreadTest02_6_18
         static void Main(string[] args)
         {
             Thread t = new Thread(threadFunc);
-            t.Start();
+            t.IsBackground = true;
 
+            t.Start();
+            
+            t.Join();
             Console.WriteLine("Main 프로그램 종료");
         }
         static void threadFunc()
