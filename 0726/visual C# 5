@@ -1,1 +1,23 @@
+namespace _0726_3
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            string path = @"C:\Temp\result1.txt";
+            string str = " ";
+            for (int i = 1; i < 100; i++)
+            {
+                if (i % 5 == 0)
+                {
+                    str += i + " ";
+                }
+            }
+            File.WriteAllText(path, str);
 
+            string readContent = File.ReadAllText(path);
+            Console.WriteLine(readContent);
+        }
+    }
+}
+--------------------------------------------------------
