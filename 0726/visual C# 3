@@ -8,3 +8,17 @@ namespace FileExam01
         }
     }
 }
+
+
+//namespace FileExam01
+//{
+//    internal class Program
+//    {
+//        static void Main(string[] args)
+//        {
+//            string path = @"c:\Temp\abc.txt";
+//            string content = "Hello World~!";
+//            File.WriteAllText(path, content);
+//        }
+//    }
+//}
