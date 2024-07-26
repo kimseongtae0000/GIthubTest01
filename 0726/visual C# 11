@@ -1,0 +1,20 @@
+namespace ThreadTest02_6_18
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Thread t = new Thread(threadFunc);
+            t.Start();
+
+            Console.WriteLine("Main 프로그램 종료");
+        }
+        static void threadFunc()
+        {
+            Console.WriteLine("3초 후에 프로그램 종료");
+            Thread.Sleep(3000);
+
+            Console.WriteLine("threadFunc 프로그램 종료");
+        }
+    }
+}
