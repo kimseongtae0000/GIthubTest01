@@ -1,1 +1,10 @@
-
+namespace FileExam01
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            File.WriteAllText(@"c:\Temp\abc.txt", "1234");
+        }
+    }
+}
