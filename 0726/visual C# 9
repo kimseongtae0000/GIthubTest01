@@ -1,1 +1,24 @@
+namespace MyCopy
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //args[0] a.txt
+            //args[1] b.txt
+            string src = args[0];
+            string dst = args[1];
+
+            try
+            {
+                File.Copy(src, dst, true);
+                Console.WriteLine("복사성공");
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+    }
+}
 
