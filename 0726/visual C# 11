@@ -11,7 +11,7 @@ namespace ThreadTest02_6_18
             
             t.Join();   //Main 스래드가 t를 기다려줍니다.
 
-            Thread.CurrentThread.Name = "Main 스레드";
+            Thread.CurrentThread.Name = "사장님";
             string mtName = Thread.CurrentThread.Name;
             Console.WriteLine($"{mtName} 프로그램 종료");
         }
@@ -20,9 +20,9 @@ namespace ThreadTest02_6_18
             Console.WriteLine("3초 후에 프로그램 종료");
             Thread.Sleep(3000);
 
-            Thread.CurrentThread.Name = "Thread1 스레드";
+            Thread.CurrentThread.Name = "개발부장";
             string mtName = Thread.CurrentThread.Name;
-            Console.WriteLine("threadFunc 프로그램 종료");
+            Console.WriteLine($"{mtName} 프로그램 종료");
         }
     }
 }
