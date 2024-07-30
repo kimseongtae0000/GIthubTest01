@@ -1,0 +1,32 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace Chap10App
+{
+    public partial class Form2 : Form
+    {
+        private int Sajin = 1;
+        private int Sajin_Max = 5;
+        public Form2()
+        {
+            InitializeComponent();
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            pictureBox1.Image = Image.FromFile(System.Environment.CurrentDirectory +
+                "/다가오는 코끼리 두마리/" + Sajin + ".jpg");
+            Sajin++;
+            if (Sajin > Sajin_Max)
+                Sajin = 1;
+        
+        }
+    }
+}
