@@ -1,1 +1,31 @@
+namespace InterdaceTest
+{
+    interface IWing
+    {
+        void fly();
+    }
+    interface IWing2
+    {
+        void fly2();
+    }
+    class Horse
+    {
+
+    }
+    class Unicon : Horse, IWing2
+    {
+        public void fly2()
+        {
+            Console.WriteLine("업그레이드 날기");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+                Unicon unicon = new Unicon();
+                unicon.fly2();
+        }
+    }
+}
 
