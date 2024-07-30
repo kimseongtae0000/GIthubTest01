@@ -1,1 +1,24 @@
+namespace InterdaceTest
+{
+    abstract class Shape
+    {
+        public abstract void Draw();
+    }
+    class Circle : Shape
+    {
+        public override void Draw()
+        {
+            Console.WriteLine("원을 그리다.");
+        }
+    }
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            //Shape shape = new Shape();
+            Circle circle = new Circle();
+            circle.Draw();
+        }
+    }
+}
 
