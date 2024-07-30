@@ -1,0 +1,23 @@
+namespace BoxingApp
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            Int32 number1 = 0;
+            int number2 = 100;
+
+            Double number3 = 3.14;
+            double number4 = 31.4159;
+
+            number1 = number2;
+            Console.WriteLine(number1);
+
+            number2 = number1;
+            Console.WriteLine(number2);
+
+            number3 = number4;
+            number4 = number3;
+        }
+    }
+}
