@@ -1,1 +1,45 @@
+using System.Drawing;
+
+namespace TrafficLight6
+{
+    public partial class Form1 : Form
+    {
+
+        public Form1()
+        {
+            InitializeComponent();
+        }
+        public void ChangeShinhodoong(int Color)
+        {
+            switch (Color)
+            {
+                case 0:
+                    pictureBox1.Image = Image.FromFile(Environment.CurrentDirectory +
+                                        "/신호등(준비중).png");
+                    break;
+                case 1:
+                    pictureBox1.Image = Image.FromFile(Environment.CurrentDirectory +
+                                         "/신호등(빨간색).png");
+                    break;
+                case 2:
+                    pictureBox1.Image = Image.FromFile(Environment.CurrentDirectory +
+                                        "/신호등(노란색).png");
+                    break;
+                case 3:
+                    pictureBox1.Image = Image.FromFile(Environment.CurrentDirectory +
+                                         "/신호등(녹색).png");
+                    break;
+            }
+        }
+        int Shinhodoong_Color = 1;
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            ChangeShinhodoong(Shinhodoong_Color);
+            Shinhodoong_Color++;
+            if (Shinhodoong_Color >= 4)
+                Shinhodoong_Color = 1;
+        }
+
+    }
+}
 
