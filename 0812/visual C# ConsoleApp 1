@@ -1,4 +1,3 @@
-
 using Oracle.ManagedDataAccess.Client;
 using System.Data;
 
