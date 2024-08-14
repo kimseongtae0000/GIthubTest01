@@ -1,3 +1,4 @@
+
 using System.Net;
 using System.Net.Sockets;
 
@@ -10,7 +11,7 @@ namespace PictureSaveServer
             TcpListener server = new TcpListener(IPAddress.Any, 13000);
             server.Start();
             Console.WriteLine("서버가 시작되었습니다. 클라이언트를 기다리는 중...");
-
+            //3. Accept
             TcpClient client = server.AcceptTcpClient();
             Console.WriteLine("클라이언트가 연결되었습니다.");
             //5. Read,Write 소켓에서 패킷을 가져오기 그림파일을 파일에 저장
@@ -34,4 +35,3 @@ namespace PictureSaveServer
         }
     }
 }
-
