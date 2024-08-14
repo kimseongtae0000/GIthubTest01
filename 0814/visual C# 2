@@ -1,4 +1,5 @@
 using System.Net.Sockets;
+using System.Text;
 
 namespace SimpleTCPClient
 {
@@ -17,9 +18,9 @@ namespace SimpleTCPClient
                 NetworkStream stream = client.GetStream();
                 byte[] data = new byte[256];
                 int bytes = stream.Read(data, 0, data.Length);
-                Console.WriteLine($"받은 메시지 : {data}");
+                string responseData = Encoding.UTF8.GetString(data, 0, bytes);
+                Console.WriteLine($"받은 메시지 : {responseData}");
             }
         }
     }
 }
-
