@@ -1,1 +1,37 @@
+using System.Net;
+using System.Net.Sockets;
+
+namespace PictureSaveServer
+{
+    internal class Program
+    {
+        static void Main(string[] args)
+        {
+            TcpListener server = new TcpListener(IPAddress.Any, 13000);
+            server.Start();
+            Console.WriteLine("서버가 시작되었습니다. 클라이언트를 기다리는 중...");
+
+            TcpClient client = server.AcceptTcpClient();
+            Console.WriteLine("클라이언트가 연결되었습니다.");
+            //5. Read,Write 소켓에서 패킷을 가져오기 그림파일을 파일에 저장
+            NetworkStream networkStream = client.GetStream();
+            //그림파일 수신 저장
+            using (FileStream filestrem = new FileStream("receoved_image.png", FileMode.Create, FileAccess.Write))
+            {
+                byte[] buffer = new byte[4096];
+                int bytesRead;
+
+                while((bytesRead = networkStream.Read(buffer, 0, buffer.Length))>0)
+                {
+                    filestrem.Write(buffer, 0  , bytesRead);
+                }
+            }
+            Console.WriteLine("파일 수신 완료");
+            //6. Close
+            networkStream.Close();
+            client.Close();
+            server.Stop();
+        }
+    }
+}
 
