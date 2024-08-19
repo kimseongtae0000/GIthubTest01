@@ -1,5 +1,6 @@
 using System.Net;
 using System.Net.Sockets;
+using System.Text;
 
 namespace MultThreadServerV1
 {
@@ -39,6 +40,15 @@ namespace MultThreadServerV1
         }
         private static void workFunc(object obj)
         {
+            byte[] recvBytes = new byte[2048];
+            Socket cliSocket = (Socket)obj;
+            int nRecv = cliSocket.Receive(recvBytes);
+
+            string txt = Encoding.UTF8.GetString(recvBytes, 0, nRecv);
+            Console.WriteLine($"클라이언트 번호 ({cnt} : {txt}");
+            byte[] sendBytes = Encoding.UTF8.GetBytes("Hello :" + txt);
+            cliSocket.Send(sendBytes);
+            cliSocket.Close();
         }
     }
 }
