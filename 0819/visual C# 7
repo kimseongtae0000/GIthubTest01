@@ -33,7 +33,7 @@ namespace WorkThread01
 
             lock (lockObject)
             {
-                Console.WriteLine($"스레드{index} 완료 : 작업이 끝났습니다."); Console.WriteLine($"스레드{index} 시작 : 작업을 수행 중...");
+                Console.WriteLine($"스레드{index} 완료 : 작업이 끝났습니다.");
 
             }
         }
