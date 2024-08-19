@@ -1,1 +1,44 @@
+using System.Net;
+using System.Net.Sockets;
 
+namespace MultThreadServerV1
+{
+    internal class Program
+    {
+        static int cnt = 0;
+
+        static void Main(string[] args)
+        {
+            Thread serverThread = new Thread(serverFunc);
+            serverThread.IsBackground = true;
+            serverThread.Start();
+
+            serverThread.Join();
+            Console.WriteLine("서버 프로그램을 종료합니다!!!");
+        }
+        private static void serverFunc(object obj)
+        {
+            using (Socket srvSocket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp))
+            {
+                IPEndPoint endPoint = new IPEndPoint(IPAddress.Any, 13000);
+                srvSocket.Bind(endPoint);
+                srvSocket.Listen(50);
+
+                Console.WriteLine("서버 시작...");
+                while (true)
+                {
+                    Socket cliSocket = srvSocket.Accept();
+                    cnt++;
+
+                    Thread workThread = new Thread(new ParameterizedThreadStart(workFunc));
+                    workThread.IsBackground=true;
+
+                    workThread.Start(cliSocket);
+                }
+            }
+        }
+        private static void workFunc(object obj)
+        {
+        }
+    }
+}
