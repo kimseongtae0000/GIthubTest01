@@ -26,7 +26,7 @@ namespace TCPListenerEchoServer
 
                     Thread clientThread = new Thread(ClientAction);
                     clientThread.IsBackground = true;
-                    clientThread.Start();
+                    clientThread.Start(client);
                 }
             }
             catch (Exception e)    //= catch (Exception ex)
@@ -42,7 +42,7 @@ namespace TCPListenerEchoServer
             }   //end of finally
         }   //end of main
 
-        private void ClientAction(object obj)
+        static void ClientAction(object obj)
         {
             TcpClient client = (TcpClient)obj;
 
