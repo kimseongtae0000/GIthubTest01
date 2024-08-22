@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<head>
+<link rel = "stylesheet" type = "text/css" href = "./css/mystyle.css">
+</head>
+<body>
+    <h2>제목입니다.</h2>
+</body>
+</html>
+---
+h2{
+            color : #ff00ff;
+            font-size : 30px;
+        }
