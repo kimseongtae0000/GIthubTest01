@@ -8,6 +8,6 @@
 <body>
     <a href = "https://naver.com" target = "_blank">네이버 사이트로 이동</a><br>
     <a href = "https://daum.net" target = "_self">다음 사이트로 이동</a><br>
-    <a href = "https://nate.com" target = "_top">네이트로 이동</a>
+    <a href = "https://nate.com" target = "_top">네이트 사이트로 이동</a>
 </body>
 </html>
