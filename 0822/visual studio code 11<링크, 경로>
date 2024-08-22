@@ -4,6 +4,11 @@
     <a href = "dt_dd.html" target = "_blank">dd페이지</a> <p></p>
 
     <a href = "./temp1/first.html" target = "_blank">첫 웹페이지</a> <p></p>
+   
+    <a href = "sample.html" target = "_blank">sample 페이지</a> <p></p>
 
+    <img src = "./img/1.png"><p></p>
+
+    <img src = "./img/2.png" width = "200" heigh = "400"><p></p>
 </body>
 </html>
