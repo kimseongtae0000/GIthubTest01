@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <a href = "dt_dd.html" target = "_blank">dd페이지</a> <p></p>
+
+    <a href = "./temp1/first.html" target = "_blank">첫 웹페이지</a> <p></p>
+
+</body>
+</html>
