@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>css01</title>
+    <!--CSS 코드를 삽입할 수 있습니다.-->
+    <style>
+        P{
+            color : red;
+            font-size : 30px;
+        }
+    </style>
+</head>
+<body>
+    <P>나무의 줄기는 땅위로 높게 자라고 해마다 굵기가 두꺼워 지지만,
+    풀의 줄기는 일 년만 자라고 겨울을 나는 동안 땅 윗부분이 죽는다.
+    </P>
+</body>
+</html>
