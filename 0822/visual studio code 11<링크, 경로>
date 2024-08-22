@@ -7,8 +7,12 @@
    
     <a href = "sample.html" target = "_blank">sample 페이지</a> <p></p>
 
-    <img src = "./img/1.png"><p></p>
+    <img src = "img/1.png"><p></p>
 
     <img src = "./img/2.png" width = "200" heigh = "400"><p></p>
+
+    <!--<img src = "./img/2.png" width = "200" heigh = "400"><p></p> -->
+
+    <!--주석입니다.-->
 </body>
 </html>
