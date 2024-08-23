@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        body{
+            background-image: url("./img/yellow_bg.jpg");
+        }
+    </style>
+</head>
+<body>
+    <h1>양귀비 꽃</h1>
+    <p><img src = "./img/yangguibi.jpg"></p>
+</body>
+</html>
