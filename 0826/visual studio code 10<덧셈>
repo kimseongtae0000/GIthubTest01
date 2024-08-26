@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        alert(500 + 3.141592);
+    </script>
+</body>
+</html>
