@@ -1,0 +1,12 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <p id="name"></p>
+    <script>
+        document.getElementById('name').innerHTML='Hello World';a
+    </script>
+</body>
+</html>
