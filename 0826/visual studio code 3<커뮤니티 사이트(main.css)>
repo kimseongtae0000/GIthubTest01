@@ -61,3 +61,44 @@ aside #guestbook li{
     margin-top: 5px;
     list-style-image: url("../img/icon_blue.gif");
 }
+
+
+
+
+
+
+
+
+
+
+
+section#main{
+    width: 758px;
+    float: right;
+}
+
+
+section#main #notice_free_youtube{
+    height: 250px;
+    position: relative;
+    margin-top: 10px;
+}
+
+
+section#main #notice{
+    width: 360px;
+    position: absolute;
+}
+
+
+section#main .latest_title{
+    padding-bottom: 3px;
+    border-bottom: solid 1px #ccc;
+}
+section#main .latest_title img.latest_img{
+    float: left;
+}
+section#main .latest_title img more{
+    float: right;
+}
+
