@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <script>
+        var array1 = [273, 32, 103, 57, 52];
+        var array2 = [273,'Hello', true, function(){}, [273,103]]
+
+        //alert(array2);
+        alert(array1[0]);
+    </script>
+</body>
+</html>
