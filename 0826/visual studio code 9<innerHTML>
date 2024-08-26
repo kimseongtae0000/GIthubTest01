@@ -10,7 +10,7 @@
         let value1 = 7;
 
         let result = pi * value1;
-        //alret(result)
+        //alert(result)
         document.getElementById('ppp').innerHTML= result;
     </script>
 </body>
