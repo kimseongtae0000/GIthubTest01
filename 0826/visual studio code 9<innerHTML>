@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <p id="ppp"></p>
+    <script>
+        let pi = 3.141592;
+        let value1 = 7;
+
+        let result = pi * value1;
+        //alret(result)
+        document.getElementById('ppp').innerHTML= result;
+    </script>
+</body>
+</html>
