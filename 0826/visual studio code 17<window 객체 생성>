@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+    <script>
+        window.open('https://www.naver.com', 'child', 'width = 600, height = 300', true);
+    </script>
+</body>
+</html>
