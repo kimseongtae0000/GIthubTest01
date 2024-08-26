@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        var func1 = function(){
+            var output = prompt('숫자를 입력해 주세요', '숫자')
+            alert(output);
+        }
+        func1();
+    </script>
+</head>
+<body>10
+
+</body>
+</html>
