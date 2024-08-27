@@ -14,7 +14,7 @@ app.UseEndpoints(endpoints =>
 });
 
 app.Run();
-
+---
 @page
 <h2>두 정수를 넣어주세요.</h2>
 
