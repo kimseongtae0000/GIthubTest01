@@ -1,10 +1,96 @@
+//Program.cs
 var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 var app = builder.Build();
 
+app.UseStaticFiles();
 
 app.MapControllerRoute(
     name:"default",
-    pattern:"{controller=My}/{action=Index}/{id?}");
+    pattern:"{controller=My}/{action=InputQuiz}/{id?}");
 
 app.Run();
+
+
+
+
+
+
+
+//MyController.cs
+using Microsoft.AspNetCore.Mvc;
+
+namespace QuizEmptyApp.controllers
+{
+    public class MyController : Controller
+    {
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult MyPage()
+        {
+            return View();
+        }
+
+        [HttpGet]
+        public IActionResult InputQuiz()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult OutputQuiz(int number)
+        {
+            ViewBag.Result = number;
+            return View();
+        }
+    }
+}
+
+
+
+
+
+
+
+
+//Index.cshtml
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+
+
+//InputQuiz.cshtml
+<h1>InputQuiz</h1>
+
+<form method="post">
+	<label>숫자를 넣어주세요 :</label>
+	<input type="number" itemid="number" name="number" value="5" required/>
+	<input type="submit" value="계산"/>
+</form>
+
+
+//MyPage.cshtml
+<h1>MyPage</h1>
+
+
+
+
+
+
+
+
+//OutputQuiz.cshtml
+<h1>OutputQuiz</h1>
+@if (ViewBag.Result != null)
+{
+결과는:
+		 <h3>@ViewBag.Result</h3>
+}
