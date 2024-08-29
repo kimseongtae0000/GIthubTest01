@@ -25,27 +25,29 @@ namespace ModelDataMVC2.Controllers
 
 @{
     ViewData["Title"] = "Output";
-    var foods = ViewBag.data;
-    var books = TempData["books"] as List<string>;
+    var books = TempData["bk"] as string[];
+    var foods = ViewBag.list;
 }
 
 <div class="text-center">
     <h1>books</h1>
     @{
-        foreach (var item in books)
+        foreach (var name in books)
         {
-            @item<br />
+            @name<br />
         }
     }
     <hr />
     <h1>foods</h1>
     @{
-        foreach (var item in foods)
+        foreach (var name in foods)
         {
-            @item<br />
+            @name<br />
         }
     }
 </div>
+
+
 
 
 
