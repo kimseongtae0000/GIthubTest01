@@ -1,0 +1,77 @@
+//HomeController.cs
+using Microsoft.AspNetCore.Mvc;
+using ModelBindingApp.Models;
+using System.Diagnostics;
+
+namespace ModelBindingApp.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+        [HttpGet]
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        public string Index(Student st)
+        {
+            return "Id:" + st.ID + "Name:" + st.Name + "HP:" + st.HP;
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+
+//Student.cs
+namespace ModelBindingApp.Models
+{
+    public class Student
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string HP { get; set; }
+    }
+}
+
+
+
+
+
+//Index.cshtml
+@model Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<div>
+    <form method="post" action="~/">
+        ID : <input asp-for="ID" class="from-control" valie="1"/>
+        이름  : <input asp-for="Name" class="from-control" valie="홍길동"/>
+        전화번호 : <input asp-for="HP" class="from-control" valie="010-1111-1111"/>
+        <input type="submit" value="OK" class="btn btn-outline-primary" />
+    </form>
+</div>
