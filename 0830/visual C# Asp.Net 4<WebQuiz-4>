@@ -1,1 +1,134 @@
+//HomeController.cs
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using WebQuiz_4.Models;
 
+namespace WebQuiz_4.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Index(int number1, int number2, string number3)
+        {
+            if (number3 == "남자")
+            {
+                double a = (double)number1 * number1 * 22 / 10000;
+                double b = (double)number2 / a * 100;
+                if (b < 90)
+                {
+                    ViewBag.Result = "저체중";
+                }
+                else if (b >= 90 && b < 110)
+                {
+                    ViewBag.Result = "정상체중";
+                }
+                else if (b >= 110 && b < 120)
+                {
+                    ViewBag.Result = "과체중";
+                }
+                else if (b >= 120 && b < 130)
+                {
+                    ViewBag.Result = "경도비만";
+                }
+                else if (b >= 130 && b < 160)
+                {
+                    ViewBag.Result = "중정도 비만";
+                }
+                else if (b >= 160)
+                {
+                    ViewBag.Result = "고도 비만";
+                }
+            }
+            else if (number3 == "여자")
+            {
+                double c = (double)number1 * number1 * 21 / 10000;
+                double d = (double)number2 / c * 100;
+                if (d < 90)
+                {
+                    ViewBag.Result = "저체중";
+                }
+                else if (d >= 90 && d < 110)
+                {
+                    ViewBag.Result = "정상체중";
+                }
+                else if (d >= 110 && d < 120)
+                {
+                    ViewBag.Result = "과체중";
+                }
+                else if (d >= 120 && d < 130)
+                {
+                    ViewBag.Result = "경도비만";
+                }
+                else if (d >= 130 && d < 160)
+                {
+                    ViewBag.Result = "중정도 비만";
+                }
+                else if (d >= 160)
+                {
+                    ViewBag.Result = "고도 비만";
+                }
+            }
+            else 
+            {
+                ViewBag.Result1 = "정확한 성별을 입력해 주세요.";
+            }
+
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+//Index.cshtml
+@page
+<h2>PIBW 테스트.</h2>
+
+<form method="post">
+    <label for="number1">키:</label>
+    <input type="number" id="number1" name="number1" required />
+    <br />
+    <br />
+    <label for="number2">몸무게:</label>
+    <input type="number" id="number2" name="number2" required />
+    <br />
+    <br />
+    <label for="number3">성별(남자/여자):</label>
+    <input type="text" id="number3" name="number3" required />
+    <br />
+    <br />
+    <input type="submit" value="BMI 계산" />
+</form>
+
+@if (ViewBag.Result != null)
+{
+            <h3>당신은 @ViewBag.Result 입니다.</h3>
+}
+@if (ViewBag.Result1 != null)
+{
+            <h3>@ViewBag.Result1</h3>
+}
