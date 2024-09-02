@@ -1,0 +1,8 @@
+SELECT TOP (1000) [Id]
+      ,[Name]
+      ,[Hp]
+  FROM [SmartFactoryDb].[dbo].[Person];
+
+  select * from Person;
+  Insert into Person (id, Name, Hp)
+  Values (1, '홍길동', '010-1111-1111');
