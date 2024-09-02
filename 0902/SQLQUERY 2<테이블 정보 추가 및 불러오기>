@@ -1,0 +1,10 @@
+SELECT TOP (1000) [No]
+      ,[Name]
+      ,[Address]
+      ,[Major]
+  FROM [MyDb].[dbo].[Student]
+
+  Insert into dbo.Student
+  Values (1, '강감찬', '안동시 송현동', '컴퓨터공학')
+
+  select * from Student;
