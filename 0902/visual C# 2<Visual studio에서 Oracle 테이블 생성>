@@ -1,0 +1,45 @@
+using Microsoft.EntityFrameworkCore;
+
+namespace EF8_002
+{
+    public class Person
+    {
+        public int ID { get; set; }
+        public string NAME { get; set; }
+        public int AGE { get; set; }
+        public string JOB { get; set; }
+    }
+    public class PersonDbContext : DbContext
+    {
+        public DbSet<Person> Persons { get; set; }
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer("Server = (local)\\SQLEXPRESS; " +
+                        "Database = MyDb; " +
+                        "Trusted_Connection = True;" +
+                        "Encrypt=False");
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Person>().HasKey(p => p.ID);
+        }
+    }
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            //1. 모듈 받기, 4개 정도 + Linq
+            //2. Model 만들기 -->Student, Person, ...객체
+            //3. DBContext 물리적은 모델 맵핑
+            //4. Add-Migration[prjName] & update-database
+
+            var context = new PersonDbContext();
+            context.Database.EnsureDeleted();
+            context.Database.EnsureCreated();
+            Console.WriteLine("데이터베이스 테이블이 생성되었습니다.");
+
+            context.Dispose();
+        }
+    }
+}
