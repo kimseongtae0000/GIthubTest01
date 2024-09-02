@@ -1,0 +1,137 @@
+//HomeController.cs
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using ValidationTest.Models;
+
+namespace ValidationTest.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Index(Student std)
+        {
+            return View(std);
+        }
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+//Student.cs
+using System.ComponentModel.DataAnnotations;
+
+namespace ValidationTest.Models
+{
+    public class Student
+    {
+        [Display(Name="이름 :")]
+        [Required(ErrorMessage= "이름을 작성해 주세요")]
+        [StringLength(15, MinimumLength =2,
+            ErrorMessage ="이름은 최소 2자 이상 15자 이하로 작성해 주세요.")]
+        public string Name { get; set; }
+        [Required(ErrorMessage = "나이를 적어주세요")]
+        [Range(20,75,ErrorMessage ="20살 ~ 75세 까지 작성하실 수 있습니다.")]
+        public int? Age { get; set; }
+        [Required(ErrorMessage = "패스워드를 적어주세요.")]
+        [RegularExpression(@"(?=.*[a-zA-Z])(?=.*[0-9]).{8,25}$", ErrorMessage = "영문자로 대소문자와 숫자조합으로 8자리이상")]
+        public string Password { get; set; }
+    }
+}
+
+
+
+
+
+///Index.cshtml
+@model Student
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+</div>
+<div>
+    <form asp-controller="Home" asp-action="Index" method="post">
+        <!--------------------------이름-------------------------->
+        <label asp-for="Name">이름 : </label>
+        <input asp-for="Name" class="form-control" placeholder="이름을 넣어주세요" />
+        <span asp-validation-for="Name" style="color:red"></span>
+        <br/>
+        <!--------------------------나이-------------------------->
+        <label asp-for="Age">나이 : </label>
+        <input asp-for="Age" class="form-control" placeholder="나이를 입력해 주세요." />
+        <span asp-validation-for="Name" style="color:red"></span>
+        <br/>
+        <!------------------------패스워드------------------------>
+        <input asp-for="Password" class="form-control" placeholder="패스워드를 작성해 주세요."/>
+        <span asp-validation-for="Password" style="color:red"></span>
+        <!--------------------------버튼-------------------------->
+        <input type="submit" value="OK" ckass="btn btn-outline-primary"/>
+    </form>
+</div>
+
+
+
+
+
+//Program.cs
+namespace ValidationTest
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.Run();
+        }
+    }
+}
