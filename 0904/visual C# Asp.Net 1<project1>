@@ -1,19 +1,62 @@
-using Manager_Page.Models;
+//HomeController.cs
 using Microsoft.AspNetCore.Mvc;
+using MiniProject02.Models;
 using System.Diagnostics;
 
-namespace Manager_Page.Controllers
+namespace MiniProject02.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
 
-        public HomeController(ILogger<HomeController> logger)
+        private readonly SCDbContext _context;
+        public HomeController(SCDbContext context)
         {
-            _logger = logger;
+            _context = context;
         }
 
         public IActionResult Index()
+        {
+            var mtts = _context.MaterialTable.ToList();
+            return View(mtts);
+        }
+
+        // GET: 삽입화면
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        // POST: 삽입기능
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Create([Bind("Id,Name,Hp")] MaterialTable materialTable)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(materialTable);
+                await _context.SaveChangesAsync();
+                return RedirectToAction(nameof(Index));
+            }
+            return View(materialTable);
+        }
+
+        //삭제
+        [HttpPost]
+        public async Task<IActionResult> DeleteSelected(List<int> selectedStudents)
+        {
+            var studentsToDelete = _context.MaterialTable.Where(s => selectedStudents.Contains(s.Id)).ToList();
+
+            _context.MaterialTable.RemoveRange(studentsToDelete);
+            await _context.SaveChangesAsync();
+
+            return RedirectToAction("Index");
+
+        }
+        public IActionResult Update(MaterialTable mtt)
+        {
+            return View();
+        }
+        public IActionResult Delete(MaterialTable mtt)
         {
             return View();
         }
@@ -27,6 +70,635 @@ namespace Manager_Page.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+//20240904071730_initSCDb2.cs
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace MiniProject02.Migrations
+{
+    /// <inheritdoc />
+    public partial class initSCDb2 : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "MaterialTable",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MaterialName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MaterialTable", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "OrderTable",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_OrderTable", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductTable",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProductName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Quantity = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductTable", x => x.Id);
+                });
+
+            migrationBuilder.InsertData(
+                table: "MaterialTable",
+                columns: new[] { "Id", "MaterialName", "Quantity" },
+                values: new object[,]
+                {
+                    { 1, "GaAs-6inch", 100 },
+                    { 2, "GaAs-8inch", 100 },
+                    { 3, "GaAs-12inch", 100 },
+                    { 4, "GaN-6inch", 100 },
+                    { 5, "GaN-8inch", 100 },
+                    { 6, "GaN-12inch", 100 },
+                    { 7, "SiC-6inch", 100 },
+                    { 8, "SiC-8inch", 100 },
+                    { 9, "SiC-12inch", 100 },
+                    { 10, "HMDS", 300 },
+                    { 11, "Photo Resist", 300 },
+                    { 12, "Etchant", 300 }
+                });
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DropTable(
+                name: "MaterialTable");
+
+            migrationBuilder.DropTable(
+                name: "OrderTable");
+
+            migrationBuilder.DropTable(
+                name: "ProductTable");
+        }
+    }
+}
+
+
+
+
+
+//20240904072259_InitialCreate.cs
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+#pragma warning disable CA1814 // Prefer jagged arrays over multidimensional
+
+namespace MiniProject02.Migrations
+{
+    /// <inheritdoc />
+    public partial class InitialCreate : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.InsertData(
+                table: "OrderTable",
+                columns: new[] { "Id", "ProductName", "Quantity" },
+                values: new object[,]
+                {
+                    { 1, "S-GaAs-6inch", 1 },
+                    { 2, "S-GaAs-8inch", 1 }
+                });
+
+            migrationBuilder.InsertData(
+                table: "ProductTable",
+                columns: new[] { "Id", "ProductName", "Quantity" },
+                values: new object[,]
+                {
+                    { 1, "S-GaAs-6inch", 10 },
+                    { 2, "S-GaAs-8inch", 10 },
+                    { 3, "S-GaAs-12inch", 10 },
+                    { 4, "S-GaN-6inch", 10 },
+                    { 5, "S-GaN-8inch", 10 },
+                    { 6, "S-GaN-12inch", 10 },
+                    { 7, "S-SiC-6inch", 10 },
+                    { 8, "S-SiC-8inch", 10 },
+                    { 9, "S-SiC-12inch", 10 }
+                });
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.DeleteData(
+                table: "OrderTable",
+                keyColumn: "Id",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "OrderTable",
+                keyColumn: "Id",
+                keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 1);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 2);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 3);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 4);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 5);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 6);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 7);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 8);
+
+            migrationBuilder.DeleteData(
+                table: "ProductTable",
+                keyColumn: "Id",
+                keyValue: 9);
+        }
+    }
+}
+
+
+
+
+
+//20240904073401_initSCDb.cs
+using Microsoft.EntityFrameworkCore.Migrations;
+
+#nullable disable
+
+namespace MiniProject02.Migrations
+{
+    /// <inheritdoc />
+    public partial class initSCDb : Migration
+    {
+        /// <inheritdoc />
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+
+        }
+
+        /// <inheritdoc />
+        protected override void Down(MigrationBuilder migrationBuilder)
+        {
+
+        }
+    }
+}
+
+
+
+
+
+//SCDbContextModelSnapshot.cs
+// <auto-generated />
+using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
+using MiniProject02.Models;
+
+#nullable disable
+
+namespace MiniProject02.Migrations
+{
+    [DbContext(typeof(SCDbContext))]
+    partial class SCDbContextModelSnapshot : ModelSnapshot
+    {
+        protected override void BuildModel(ModelBuilder modelBuilder)
+        {
+#pragma warning disable 612, 618
+            modelBuilder
+                .HasAnnotation("ProductVersion", "8.0.8")
+                .HasAnnotation("Relational:MaxIdentifierLength", 128);
+
+            SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
+
+            modelBuilder.Entity("MiniProject02.Models.MaterialTable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("MaterialName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("MaterialTable");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            MaterialName = "GaAs-6inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 2,
+                            MaterialName = "GaAs-8inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 3,
+                            MaterialName = "GaAs-12inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 4,
+                            MaterialName = "GaN-6inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 5,
+                            MaterialName = "GaN-8inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 6,
+                            MaterialName = "GaN-12inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 7,
+                            MaterialName = "SiC-6inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 8,
+                            MaterialName = "SiC-8inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 9,
+                            MaterialName = "SiC-12inch",
+                            Quantity = 100
+                        },
+                        new
+                        {
+                            Id = 10,
+                            MaterialName = "HMDS",
+                            Quantity = 300
+                        },
+                        new
+                        {
+                            Id = 11,
+                            MaterialName = "Photo Resist",
+                            Quantity = 300
+                        },
+                        new
+                        {
+                            Id = 12,
+                            MaterialName = "Etchant",
+                            Quantity = 300
+                        });
+                });
+
+            modelBuilder.Entity("MiniProject02.Models.OrderTable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("OrderTable");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ProductName = "S-GaAs-6inch",
+                            Quantity = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ProductName = "S-GaAs-8inch",
+                            Quantity = 1
+                        });
+                });
+
+            modelBuilder.Entity("MiniProject02.Models.ProductTable", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("ProductName")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("Quantity")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductTable");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            ProductName = "S-GaAs-6inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 2,
+                            ProductName = "S-GaAs-8inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            ProductName = "S-GaAs-12inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 4,
+                            ProductName = "S-GaN-6inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 5,
+                            ProductName = "S-GaN-8inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 6,
+                            ProductName = "S-GaN-12inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 7,
+                            ProductName = "S-SiC-6inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 8,
+                            ProductName = "S-SiC-8inch",
+                            Quantity = 10
+                        },
+                        new
+                        {
+                            Id = 9,
+                            ProductName = "S-SiC-12inch",
+                            Quantity = 10
+                        });
+                });
+#pragma warning restore 612, 618
+        }
+    }
+}
+
+
+
+
+
+//SC.cs
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace MiniProject02.Models
+{
+    public class MaterialTable
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string MaterialName { get; set; }
+        public int Quantity { get; set; }
+    }
+
+    public class OrderTable
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+    }
+
+    public class ProductTable
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        public string ProductName { get; set; }
+        public int Quantity { get; set; }
+    }
+}
+
+
+
+
+
+//SCDbContext.cs
+using Microsoft.EntityFrameworkCore;
+
+namespace MiniProject02.Models
+{
+    public class SCDbContext : DbContext
+    {
+        public DbSet<MaterialTable> MaterialTable { get; set; }
+        public DbSet<OrderTable> OrderTable { get; set; }
+        public DbSet<ProductTable> ProductTable { get; set; }
+        public SCDbContext(DbContextOptions options) : base(options)
+        {
+        }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            // MaterialTable 데이터 시딩
+            modelBuilder.Entity<MaterialTable>().HasData(
+                new MaterialTable { Id = 1, MaterialName = "GaAs-6inch", Quantity = 100 },
+                new MaterialTable { Id = 2, MaterialName = "GaAs-8inch", Quantity = 100 },
+                new MaterialTable { Id = 3, MaterialName = "GaAs-12inch", Quantity = 100 },
+                new MaterialTable { Id = 4, MaterialName = "GaN-6inch", Quantity = 100 },
+                new MaterialTable { Id = 5, MaterialName = "GaN-8inch", Quantity = 100 },
+                new MaterialTable { Id = 6, MaterialName = "GaN-12inch", Quantity = 100 },
+                new MaterialTable { Id = 7, MaterialName = "SiC-6inch", Quantity = 100 },
+                new MaterialTable { Id = 8, MaterialName = "SiC-8inch", Quantity = 100 },
+                new MaterialTable { Id = 9, MaterialName = "SiC-12inch", Quantity = 100 },
+                new MaterialTable { Id = 10, MaterialName = "HMDS", Quantity = 300 },
+                new MaterialTable { Id = 11, MaterialName = "Photo Resist", Quantity = 300 },
+                new MaterialTable { Id = 12, MaterialName = "Etchant", Quantity = 300 }
+            );
+
+            // OrderTable 데이터 시딩
+            modelBuilder.Entity<OrderTable>().HasData(
+                new OrderTable { Id = 1, ProductName = "S-GaAs-6inch", Quantity = 1 },
+                new OrderTable { Id = 2, ProductName = "S-GaAs-8inch", Quantity = 1 }
+            );
+
+            //// ProductTable 데이터 시딩
+            modelBuilder.Entity<ProductTable>().HasData(
+                new ProductTable { Id = 1, ProductName = "S-GaAs-6inch", Quantity = 10 },
+                new ProductTable { Id = 2, ProductName = "S-GaAs-8inch", Quantity = 10 },
+                new ProductTable { Id = 3, ProductName = "S-GaAs-12inch", Quantity = 10 },
+                new ProductTable { Id = 4, ProductName = "S-GaN-6inch", Quantity = 10 },
+                new ProductTable { Id = 5, ProductName = "S-GaN-8inch", Quantity = 10 },
+                new ProductTable { Id = 6, ProductName = "S-GaN-12inch", Quantity = 10 },
+                new ProductTable { Id = 7, ProductName = "S-SiC-6inch", Quantity = 10 },
+                new ProductTable { Id = 8, ProductName = "S-SiC-8inch", Quantity = 10 },
+                new ProductTable { Id = 9, ProductName = "S-SiC-12inch", Quantity = 10 }
+            );
+        }
+    }
+}
+
+
+
+
+
+
+//Index.cshtml
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+
+
+
+
+//Program.cs
+using Microsoft.EntityFrameworkCore;
+using MiniProject02.Models;
+
+namespace MiniProject02
+{
+    public class Program
+    {
+        public static void Main(string[] args)
+        {
+            var builder = WebApplication.CreateBuilder(args);
+
+            // Add services to the container.
+            builder.Services.AddControllersWithViews();
+            ///////////////////////////////////////////
+            var provider = builder.Services.BuildServiceProvider();
+            var config = provider.GetRequiredService<IConfiguration>();
+            builder.Services.AddDbContext<SCDbContext>(item => item.UseSqlServer(config.GetConnectionString("DefaultConnection")));
+
+            ///////////////////////////////////////////
+
+            var app = builder.Build();
+
+            // Configure the HTTP request pipeline.
+            if (!app.Environment.IsDevelopment())
+            {
+                app.UseExceptionHandler("/Home/Error");
+                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+                app.UseHsts();
+            }
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
+            app.UseRouting();
+
+            app.UseAuthorization();
+
+            app.MapControllerRoute(
+                name: "default",
+                pattern: "{controller=Home}/{action=Index}/{id?}");
+
+            app.Run();
         }
     }
 }
