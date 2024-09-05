@@ -1,0 +1,398 @@
+//site.css
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/background_order.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.8;
+        z-index: -1;
+    }
+
+
+
+
+
+//HomeController.cs
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using Microsoft.EntityFrameworkCore;
+using System.Diagnostics;
+using WebCRUDApp.Models;
+
+namespace WebCRUDApp.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> logger;
+        //private readonly StudentDbContext context;
+        private readonly WebCRUDDbContext context;
+
+        public HomeController(WebCRUDDbContext _context, ILogger<HomeController> _logger)
+        {
+            context = _context;
+            logger = _logger;
+        }
+
+        public IActionResult Index()
+        {
+            
+            return View();
+        }
+
+        public IActionResult Create()
+        {
+            ViewBag.wafers = new SelectList(new List<string> { "6inch", "8inch", "12inch" });
+            ViewBag.liquids = new SelectList(new List<string>{ "GaAs", "GaN", "SiC" });
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                context.Order.Add(order);
+                context.SaveChanges();
+                string orderFN = $"S-{order.Liquid}-{order.Wafer}";
+                var ordertable = context.OrderTable.FirstOrDefault(c => c.ProductName == orderFN);
+                if (ordertable != null)
+                {
+                    // Customer의 Points 값을 Order의 Quantity에 더함
+                    ordertable.Quantity += order.Quantity;
+
+                    // Order 테이블의 변경 사항 저장
+                    context.OrderTable.Update(ordertable);
+                    context.SaveChanges();
+                }
+
+                return RedirectToAction("Create", new { success = true });
+            }
+            return View(order);
+        }
+
+        
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+
+//Order.cs
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace WebCRUDApp.Models
+{
+    public class Order
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        [Required]
+        public int Quantity { get; set; }
+        [Required]
+        public string Wafer { get; set; }
+        [Required]
+        
+        public string Liquid { get; set; }
+        [Required]
+        [MaxLength(30)]
+        public string CustomerName { get; set; }
+    }
+}
+
+
+
+
+
+
+//OrderTable.cs
+using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace WebCRUDApp.Models
+{
+    public class OrderTable
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Required]
+        public string ProductName { get; set; }
+        [Required]
+
+        public int Quantity { get; set; }
+    }
+}
+
+
+
+
+
+
+//Student.cs
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace WebCRUDApp.Models
+{
+    public class Student
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+        [Required]
+        [MaxLength(50)]
+        public string Name { get; set; }
+        [Required]
+        [MaxLength(13)]
+        public string Hp { get; set; }
+        [Required]
+        public string Grade { get; set; }
+    }
+}
+
+
+
+
+
+
+//WebCRUDDbContext.cs
+using Microsoft.EntityFrameworkCore;
+
+namespace WebCRUDApp.Models
+{
+    public class WebCRUDDbContext : DbContext
+    {
+        public WebCRUDDbContext(DbContextOptions options) : base(options)
+        {
+        }
+        public DbSet<OrderTable> OrderTable { get; set; }
+        public DbSet<Order> Order { get; set; }
+        public DbSet<Student> Students { get; set; }
+    }
+}
+
+
+
+
+
+
+//Create.cshtml
+@model WebCRUDApp.Models.Order
+
+@{
+    ViewData["Title"] = "Create";
+}
+<meta charset="utf-8" />
+<h1 class="text-center mb-4">Create Order</h1>
+<hr />
+
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+            <form asp-action="Create" class="bg-light p-4 rounded shadow-sm">
+                <div asp-validation-summary="ModelOnly" class="alert alert-danger"></div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="CustomerName" class="form-label"></label>
+                    <input asp-for="CustomerName" class="form-control" placeholder="Enter customer name" />
+                    <span asp-validation-for="CustomerName" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Quantity" class="form-label"></label>
+                    <input asp-for="Quantity" class="form-control" placeholder="Enter quantity" />
+                    <span asp-validation-for="Quantity" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-3">
+                    <label asp-for="Liquid" class="form-label"></label>
+                    <select asp-for="Liquid" class="form-select" asp-items="ViewBag.liquids">
+                        <option value="">Select Liquid</option>
+                    </select>
+                    <span asp-validation-for="Liquid" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label asp-for="Wafer" class="form-label"></label>
+                    <select asp-for="Wafer" class="form-select" asp-items="ViewBag.wafers">
+                        <option value="">Select Wafer</option>
+                    </select>
+                    <span asp-validation-for="Wafer" class="text-danger"></span>
+                </div>
+
+                <div class="text-end">
+                    <input type="submit" value="주문하기" class="btn btn-primary" />
+                </div>
+            </form>
+
+            @if (TempData["SuccessMessage"] != null)
+            {
+                    <div class="alert alert-success mt-3">
+                    @TempData["SuccessMessage"]
+                    </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+        <script type="text/javascript">
+            // Check if the query string contains a success parameter
+            var urlParams = new URLSearchParams(window.location.search);
+            if (urlParams.has('success')) {
+                alert('Order has been successfully created');
+                // Clear query string parameters
+                history.replaceState({}, document.title, window.location.pathname);
+            }
+        </script>
+}
+
+
+
+
+
+
+//Index.cshtml
+@model IEnumerable<WebCRUDApp.Models.Order>
+
+@{
+    ViewData["Title"] = "주문 목록";
+}
+
+<h1 class="display-4">주문 목록</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary mb-3">새 주문 만들기</a>
+</p>
+
+<table class="table table-striped table-hover">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id)</th>
+            <th>@Html.DisplayNameFor(model => model.CustomerName)</th>
+            <th>@Html.DisplayNameFor(model => model.Quantity)</th>
+            <th>@Html.DisplayNameFor(model => model.Liquid)</th>
+            <th>@Html.DisplayNameFor(model => model.Wafer)</th>
+            <th>동작</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id)</td>
+                <td>@Html.DisplayFor(modelItem => item.CustomerName)</td>
+                <td>@Html.DisplayFor(modelItem => item.Quantity)</td>
+                <td>@Html.DisplayFor(modelItem => item.Liquid)</td>
+                <td>@Html.DisplayFor(modelItem => item.Wafer)</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-warning">수정</a>
+                    <a asp-action="Details" asp-route-id="@item.Id" class="btn btn-sm btn-info">상세보기</a>
+                    <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-danger">삭제</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+
+
+
+
+//_Layout.cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Semi Supply</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/WebCRUDApp.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <!-- Add image before the brand name -->
+                <a class="navbar-brand d-flex align-items-center" asp-area="" asp-controller="Home" asp-action="Index">
+                    <img src="~/images/LOGO.png" alt="Semi Supply Logo" class="me-2" style="height: 40px;" />
+                    Semi Supply
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
