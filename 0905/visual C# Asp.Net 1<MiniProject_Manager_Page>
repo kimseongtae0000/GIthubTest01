@@ -1,0 +1,379 @@
+//site.css
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+}
+/*내*/
+.admin-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.admin-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.admin-buttons {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.admin-button {
+    flex: 1;
+    padding: 15px;
+    font-size: 16px;
+    border-radius: 10px;
+}
+
+.admin-footer {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #6c757d;
+}
+
+.navbar {
+    margin-bottom: 20px;
+}
+
+.navbar-text {
+    margin-left: auto;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+/*배경*/
+body {
+    position: relative;
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+    body::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('/images/background.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        opacity: 0.8;
+        z-index: -1;
+    }
+
+/*확대*/
+.admin-button {
+    transition: transform 0.3s ease;
+}
+
+    .admin-button:hover {
+        transform: scale(1.1);
+    }
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.form-box {
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+    .form-group label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+    }
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #fff;
+    margin-right: 10px;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+}
+
+/*내*/
+
+
+
+
+
+//HomeController.cs
+using _1.Models;
+using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+
+namespace _1.Controllers
+{
+    public class HomeController : Controller
+    {
+        private readonly ILogger<HomeController> _logger;
+
+        public HomeController(ILogger<HomeController> logger)
+        {
+            _logger = logger;
+        }
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public IActionResult Privacy()
+        {
+            return View();
+        }
+   //내
+        public IActionResult DCreate()
+        {
+            return View();
+        }
+        public IActionResult DDelete()
+        {
+            return View();
+        }
+        public IActionResult DView()
+        {
+            return View();
+        }
+        public IActionResult PView()
+        {
+            return View();
+        }
+
+        //내
+
+        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
+        public IActionResult Error()
+        {
+            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+    }
+}
+
+
+
+
+
+//DCreate.cshtml
+@{
+    ViewData["Title"] = "재료 입고";
+}
+
+<div class="container">
+    <div class="form-box">
+        <h1>@ViewData["Title"]</h1>
+
+        <form asp-page-handler="ReceiveMaterial" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-group">
+                <label for="materialName">재료 이름</label>
+                <input type="text" id="materialName" name="MaterialName" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">수량</label>
+                <input type="number" id="quantity" name="Quantity" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">입고</button>
+                <a asp-page="/Index" class="btn btn-secondary">목록으로 돌아가기</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+//DDelete.cshtml
+@{
+    ViewData["Title"] = "재료 출하";
+}
+
+<div class="container">
+    <div class="form-box">
+        <h1>@ViewData["Title"]</h1>
+
+        <form asp-page-handler="ReceiveMaterial" method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="form-group">
+                <label for="materialName">재료 이름</label>
+                <input type="text" id="materialName" name="MaterialName" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+                <label for="quantity">수량</label>
+                <input type="number" id="quantity" name="Quantity" class="form-control" required />
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">출하</button>
+                <a asp-page="/Index" class="btn btn-secondary">목록으로 돌아가기</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+
+
+
+//DView.cshtml
+@{
+    ViewData["Title"] = "홈 페이지";
+}
+
+<h2>재고 관리</h2>
+
+<!-- 재고 조회 버튼 -->
+<a href="@Url.Action("Inventory", "Home")" class="btn btn-primary">재고 조회</a>
+
+
+
+
+//Index.cshtml
+@{
+    ViewData["Title"] = "Manager_Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="admin-container">
+    <div class="admin-header">
+        <h2>@ViewData["Title"]</h2>
+        <p>관리자 페이지에서 데이터를 관리하세요.</p>
+    </div>
+
+    <div class="admin-buttons">
+        <form asp-action="DCreate" method="post">
+            <button type="submit" class="btn btn-success admin-button">재료 입고</button>
+        </form>
+
+        <form asp-action="DDelete" method="post">
+            <button type="submit" class="btn btn-danger admin-button">재료 출하</button>
+        </form>
+
+        <form asp-action="DView" method="post">
+            <button type="submit" class="btn btn-info admin-button">재고 조회</button>
+        </form>
+            <button type = "submit" class="btn btn-secondary admin-button">공정 현황 확인</button>
+    </div>
+</div>
+
+
+
+
+//_Layout.cshtml
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - Manager_Page</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/_1.styles.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container-fluid">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Manager_Page</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="navbar-nav flex-grow-1">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            @RenderBody()
+        </main>
+    </div>
+
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>
