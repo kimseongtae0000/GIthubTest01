@@ -1,0 +1,11 @@
+int brightness = 0;
+
+void setup() {
+  pinMode(9, OUTPUT);
+}
+
+void loop() {
+   analogWrite(9, brightness);
+   brightness = brightness + 5;
+   delay(50);
+}
