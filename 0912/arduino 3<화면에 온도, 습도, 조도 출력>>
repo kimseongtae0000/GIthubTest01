@@ -1,0 +1,87 @@
+#include <SPI.h>
+#include <Wire.h>
+#include <Adafruit_GFX.h>
+#include <Adafruit_SSD1306.h>
+#include <BH1750.h>
+#include <DHT.h>
+
+#define SCREEN_WIDTH 128
+#define SCREEN_HEIGHT 64
+
+#define OLED_RESET -1
+#define SCREEN_ADDRESS 0x3C
+Adafruit_SSD1306 display(SCREEN_WIDTH, SCREEN_HEIGHT, &Wire, OLED_RESET);
+
+// 조도 센서 (BH1750) 설정
+BH1750 lightMeter;
+
+// 온도 및 습도 센서 (DHT22) 설정
+#define DHTPIN 4      // DHT 센서를 Arduino의 디지털 핀 4에 연결
+#define DHTTYPE DHT11 // DHT11을 사용하는 경우 DHT11으로 변경
+DHT dht(DHTPIN, DHTTYPE);
+
+void setup() {
+  Serial.begin(9600);
+
+  // OLED 디스플레이 초기화
+  if(!display.begin(SSD1306_SWITCHCAPVCC, SCREEN_ADDRESS)) {
+    Serial.println(F("SSD1306 allocation failed"));
+    for(;;); // 진행 중지, 무한 루프
+  }
+
+  Wire.begin();
+
+  // 조도 센서 초기화
+  if (!lightMeter.begin()) {
+    Serial.println(F("BH1750 init failed!"));
+    for(;;); // 진행 중지, 무한 루프
+  }
+
+  // 온습도 센서 초기화
+  dht.begin();
+
+  // 디스플레이 설정
+  display.clearDisplay();
+  display.setTextSize(1);       // 텍스트 크기 설정
+  display.setTextColor(WHITE);  // 텍스트 색상 설정
+}
+
+void loop() {
+  // 조도 값 읽기
+  float lux = lightMeter.readLightLevel();
+
+  // 온도 및 습도 값 읽기
+  float humidity = dht.readHumidity();
+  float temperature = dht.readTemperature();   // 섭씨 온도
+
+  // 온도 및 습도 값이 유효한지 확인
+  if (isnan(humidity) || isnan(temperature)) {
+    Serial.println(F("Failed to read from DHT sensor!"));
+    return;
+  }
+
+  // 디스플레이에 값 출력
+  display.clearDisplay();
+
+  // 조도 값 출력
+  display.setCursor(0, 0);      // 첫 번째 줄에 조도 출력
+  display.print("Light: ");
+  display.print(lux);
+  display.print(" lx");
+
+  // 온도 값 출력
+  display.setCursor(0, 16);     // 두 번째 줄에 온도 출력
+  display.print("Temp: ");
+  display.print(temperature);
+  display.print(" C");
+
+  // 습도 값 출력
+  display.setCursor(0, 32);     // 세 번째 줄에 습도 출력
+  display.print("Humidity: ");
+  display.print(humidity);
+  display.print(" %");
+
+  display.display();            // 화면에 출력
+
+  delay(2000);  // 2초 대기
+}
