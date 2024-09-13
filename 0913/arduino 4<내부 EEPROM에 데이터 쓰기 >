@@ -1,0 +1,7 @@
+#include <EEPROM.h>
+void setup( ) {
+   for(int address = 0; address < 1024; address++) {
+      EEPROM.write(address, address%256);
+   }
+}
+void loop( ) { }
