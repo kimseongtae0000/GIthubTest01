@@ -1,0 +1,12 @@
+#include "Timer.h"
+#define USER_LED	12
+Timer t;
+
+void setup() {
+  pinMode(USER_LED, OUTPUT);
+  t.oscillate(USER_LED, 1000, LOW);
+}
+
+void loop() {
+  t.update();
+}
