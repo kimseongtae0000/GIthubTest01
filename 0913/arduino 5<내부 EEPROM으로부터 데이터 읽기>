@@ -1,0 +1,10 @@
+#include <EEPROM.h>
+void setup( ) {
+   byte data;
+   Serial.begin(9600);
+   for(int address = 0; address < 1024; address++) {
+      data = EEPROM.read(address);
+      Serial.print(address); Serial.print(“ : “); Serial.println(data);
+   }
+}
+void loop( ) { }
