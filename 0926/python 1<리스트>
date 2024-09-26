@@ -1,0 +1,4 @@
+ lst = ['a', 'b', ['boy', 'girl']]
+len(lst)
+
+lst[2][1]
