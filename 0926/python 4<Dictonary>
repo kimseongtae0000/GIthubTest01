@@ -1,0 +1,8 @@
+data_point = {
+    'measurement':'Sensors',
+    'tag':{'Location':'', 'SubLocation':''},
+    'field':{'Temp':0.0, 'Huml':0.0}
+}
+data_point.keys()
+data_point.keys()print(data_point['measurement'])
+print(data_point['tag'])
