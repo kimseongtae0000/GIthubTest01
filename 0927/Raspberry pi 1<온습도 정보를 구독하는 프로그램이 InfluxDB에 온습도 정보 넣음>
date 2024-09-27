@@ -1,0 +1,52 @@
+import paho.mqtt.client as mqtt
+
+def on_connect( client, userdata, flags, reason_code, properties ):
+   print(f“Connect with result code:{reason_code}“)
+   client.subscribe(“temp”)
+
+def on_message( client, userdata, msg ):
+   print( msg.topic +” “+str(msg.payload) )
+
+mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+mqttc.username_pw_set(username=“mqtt_ship”, password=“1234”)
+mqttc.on_connect = on_connect
+mqttc.on_message = on_message
+mqttc.connect(“localhost”, 1883, 60)
+mqttc.loop_forever( )
+
+from influxdb import InfluxDBClient	#file name : subHumiTempInsert.py
+
+import paho.mqtt.client as mqtt
+dbClient = InfluxDBClient(host=‘localhost’, port=8086, username=‘influx_ship’, password=‘1234’, database=‘db_riatech’)
+
+def on_connect( client, userdata, flags, reason_code, properties ):
+   print(f“Connect with result code:{reason_code}“)
+   client.subscribe(“MyOffice/Indoor/#”)
+
+def on_message( client, userdata, msg ):
+   print( msg.topic +” “+str(msg.payload) )   
+   topic = msg.topic.split(‘/’)			# ‘MyOffice/Indoor/Temp’, ‘MyOffice/Indoor/Humi‘
+					# topic  [ 'MyOffice', ‘Indoor’, ‘Temp’]	
+   json_body = [ ]
+
+   data_point = {
+	‘measurement’: ‘sensors’,
+	‘tags’: {‘Location’: ‘ ‘, ‘SubLocation’:‘ '},
+	‘fields’: {‘Temp’: 0.0, ‘Humi’:0.0}
+	}
+
+   data_point[‘tags’][‘Location’] = topic[0]		# topic[0]  'MyOffice'
+   data_point[‘tags’][‘SubLocation’] = topic[1]	# topic[1]  'Indoor'
+   data_point[‘fields’][topic[2]] = float(msg.payload)	# topic[2]  'Temp‘
+
+   json_body.append(data_point)
+   dbClient.write_points( json_body )
+
+
+mqttc = mqtt.Client(mqtt.CallbackAPIVersion.VERSION2)
+mqttc.username_pw_set(username=“mqtt_boy”, password=“1234”)
+mqttc.on_connect = on_connect
+mqttc.on_message = on_message
+mqttc.connect(“localhost”, 1883, 60)
+mqttc.loop_forever( )
+
